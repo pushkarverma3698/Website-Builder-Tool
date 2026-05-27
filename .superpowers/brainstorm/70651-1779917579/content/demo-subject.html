@@ -1,0 +1,127 @@
+<style>
+  .cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem; }
+  .card { border: 2px solid #2a2a3a; border-radius: 16px; overflow: hidden; cursor: pointer; transition: all 0.2s; background: #13131f; }
+  .card:hover { border-color: #7B61FF; transform: translateY(-2px); }
+  .card.selected { border-color: #7B61FF; background: #1a1630; box-shadow: 0 0 0 4px rgba(123,97,255,0.15); }
+  .card-preview { height: 160px; display: flex; align-items: center; justify-content: center; font-size: 3rem; position: relative; overflow: hidden; }
+  .preview-a { background: linear-gradient(135deg, #0A0A14 0%, #1a1035 100%); }
+  .preview-b { background: linear-gradient(135deg, #0D0D12 0%, #1a1408 100%); }
+  .preview-c { background: linear-gradient(135deg, #000000 0%, #0d0d1a 100%); }
+  .preview-dots { position: absolute; width: 100%; height: 100%; opacity: 0.4; }
+  .card-body { padding: 1.25rem; }
+  .card-body h3 { margin: 0 0 0.4rem; font-size: 1.05rem; color: #e0e0ff; }
+  .card-body p { margin: 0; font-size: 0.85rem; color: #888; line-height: 1.5; }
+  .tag { display: inline-block; background: rgba(123,97,255,0.15); color: #a78bfa; border: 1px solid rgba(123,97,255,0.3); border-radius: 20px; padding: 2px 10px; font-size: 0.72rem; margin-bottom: 0.5rem; }
+  .tag-gold { background: rgba(201,168,76,0.15); color: #C9A84C; border-color: rgba(201,168,76,0.3); }
+  .tag-green { background: rgba(16,185,129,0.15); color: #10B981; border-color: rgba(16,185,129,0.3); }
+  /* Fake 3D network dots for A */
+  .dot { position: absolute; border-radius: 50%; }
+  .line { position: absolute; background: rgba(123,97,255,0.3); height: 1px; transform-origin: left center; }
+</style>
+
+<h2>What should the sample 3D website be for?</h2>
+<p class="subtitle">This demo will live in the <code>examples/</code> folder as the showpiece of the open-source toolkit. Choose the subject that'll have the most impact.</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="turicks" onclick="toggleSelect(this)">
+    <div class="card-preview preview-a">
+      <svg width="100%" height="100%" viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg" class="preview-dots">
+        <!-- Network graph nodes -->
+        <circle cx="150" cy="80" r="8" fill="#7B61FF" opacity="0.9"/>
+        <circle cx="80" cy="50" r="5" fill="#7B61FF" opacity="0.5"/>
+        <circle cx="220" cy="45" r="5" fill="#7B61FF" opacity="0.5"/>
+        <circle cx="60" cy="110" r="4" fill="#7B61FF" opacity="0.4"/>
+        <circle cx="240" cy="115" r="4" fill="#7B61FF" opacity="0.4"/>
+        <circle cx="110" cy="130" r="4" fill="#22D3EE" opacity="0.5"/>
+        <circle cx="195" cy="125" r="4" fill="#22D3EE" opacity="0.5"/>
+        <circle cx="30" cy="75" r="3" fill="#7B61FF" opacity="0.3"/>
+        <circle cx="270" cy="80" r="3" fill="#7B61FF" opacity="0.3"/>
+        <!-- Connection lines -->
+        <line x1="150" y1="80" x2="80" y2="50" stroke="#7B61FF" stroke-width="1" opacity="0.4"/>
+        <line x1="150" y1="80" x2="220" y2="45" stroke="#7B61FF" stroke-width="1" opacity="0.4"/>
+        <line x1="150" y1="80" x2="60" y2="110" stroke="#22D3EE" stroke-width="1" opacity="0.3"/>
+        <line x1="150" y1="80" x2="240" y2="115" stroke="#22D3EE" stroke-width="1" opacity="0.3"/>
+        <line x1="150" y1="80" x2="110" y2="130" stroke="#7B61FF" stroke-width="1" opacity="0.25"/>
+        <line x1="80" y1="50" x2="30" y2="75" stroke="#7B61FF" stroke-width="0.5" opacity="0.2"/>
+        <line x1="220" y1="45" x2="270" y2="80" stroke="#7B61FF" stroke-width="0.5" opacity="0.2"/>
+        <!-- Glow on center -->
+        <circle cx="150" cy="80" r="20" fill="#7B61FF" opacity="0.08"/>
+        <circle cx="150" cy="80" r="35" fill="#7B61FF" opacity="0.04"/>
+        <text x="150" y="84" text-anchor="middle" fill="#fff" font-size="10" opacity="0.9" font-family="monospace">TURICKS</text>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="tag">Direct value</div>
+      <h3>Turicks AI Landing Page</h3>
+      <p>The 3D network-visualization experience from the prompt. LinkedIn automation, node graph, conversion story. Real brand, real product.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="builder" onclick="toggleSelect(this)">
+    <div class="card-preview preview-b">
+      <svg width="100%" height="100%" viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg">
+        <!-- Abstract builder/tool visualization -->
+        <rect x="30" y="40" width="240" height="80" rx="8" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.3"/>
+        <!-- Floating cards -->
+        <rect x="45" y="55" width="60" height="40" rx="4" fill="#1a1408" stroke="#C9A84C" stroke-width="1" opacity="0.8"/>
+        <rect x="120" y="50" width="60" height="40" rx="4" fill="#1a1408" stroke="#C9A84C" stroke-width="1" opacity="0.8"/>
+        <rect x="195" y="55" width="60" height="40" rx="4" fill="#1a1408" stroke="#C9A84C" stroke-width="1" opacity="0.8"/>
+        <!-- Particle dots -->
+        <circle cx="75" cy="75" r="3" fill="#C9A84C" opacity="0.8"/>
+        <circle cx="150" cy="70" r="3" fill="#C9A84C" opacity="0.8"/>
+        <circle cx="225" cy="75" r="3" fill="#C9A84C" opacity="0.8"/>
+        <!-- Labels -->
+        <text x="75" y="89" text-anchor="middle" fill="#888" font-size="6" font-family="monospace">ORGANIC</text>
+        <text x="150" y="89" text-anchor="middle" fill="#888" font-size="6" font-family="monospace">MIDNIGHT</text>
+        <text x="225" y="89" text-anchor="middle" fill="#888" font-size="6" font-family="monospace">BRUTALIST</text>
+        <!-- Connections -->
+        <line x1="75" y1="75" x2="150" y2="70" stroke="#C9A84C" stroke-width="0.5" opacity="0.3"/>
+        <line x1="150" y1="70" x2="225" y2="75" stroke="#C9A84C" stroke-width="0.5" opacity="0.3"/>
+        <!-- Title -->
+        <text x="150" y="145" text-anchor="middle" fill="#C9A84C" font-size="9" opacity="0.7" font-family="sans-serif">CINEMATIC BUILDER</text>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="tag tag-gold">Meta / Portfolio</div>
+      <h3>The Builder's Own Website</h3>
+      <p>Build the website for the website-builder-tool itself. "Dogfooding" — show off all 5 presets + 3D mode in one showcase. Perfect open-source landing page.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="saas" onclick="toggleSelect(this)">
+    <div class="card-preview preview-c">
+      <svg width="100%" height="100%" viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg">
+        <!-- Star field / space -->
+        <circle cx="40" cy="30" r="1" fill="white" opacity="0.6"/>
+        <circle cx="80" cy="20" r="1.5" fill="white" opacity="0.4"/>
+        <circle cx="140" cy="10" r="1" fill="white" opacity="0.7"/>
+        <circle cx="200" cy="25" r="1" fill="white" opacity="0.5"/>
+        <circle cx="260" cy="15" r="1.5" fill="white" opacity="0.4"/>
+        <circle cx="20" cy="70" r="1" fill="white" opacity="0.3"/>
+        <circle cx="280" cy="60" r="1" fill="white" opacity="0.6"/>
+        <!-- Planet/orb -->
+        <circle cx="150" cy="80" r="45" fill="url(#planetGrad)" opacity="0.9"/>
+        <defs>
+          <radialGradient id="planetGrad" cx="35%" cy="35%">
+            <stop offset="0%" stop-color="#4040a0"/>
+            <stop offset="100%" stop-color="#000020"/>
+          </radialGradient>
+        </defs>
+        <!-- Orbit ring -->
+        <ellipse cx="150" cy="80" rx="60" ry="15" fill="none" stroke="white" stroke-width="0.5" opacity="0.3"/>
+        <circle cx="210" cy="80" r="5" fill="#a78bfa" opacity="0.9"/>
+        <!-- Text -->
+        <text x="150" y="84" text-anchor="middle" fill="white" font-size="8" opacity="0.8" font-family="sans-serif">FOUNDEROS</text>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="tag tag-green">Neutral demo</div>
+      <h3>FounderOS — AI for Founders</h3>
+      <p>Use your FounderOS project as the demo subject. AI operating system for startup founders. Space-tech preset E, immersive and dramatic.</p>
+    </div>
+  </div>
+
+</div>
+
+<p style="margin-top: 1.5rem; color: #666; font-size: 0.85rem;">💡 Click a card to select it, then tell me your choice in the terminal. We'll also pick the 3D scene style next.</p>

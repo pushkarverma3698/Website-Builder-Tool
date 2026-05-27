@@ -1,0 +1,159 @@
+<style>
+  .approaches { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 1.5rem; }
+  .approach { border: 2px solid #2a2a3a; border-radius: 14px; overflow: hidden; cursor: pointer; transition: all 0.2s; background: #13131f; }
+  .approach:hover { border-color: #7B61FF; transform: translateX(2px); }
+  .approach.selected { border-color: #7B61FF; background: #1a1630; box-shadow: 0 0 0 4px rgba(123,97,255,0.15); }
+  .approach-header { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.25rem; border-bottom: 1px solid #1e1e2e; }
+  .approach-label { display: inline-block; font-size: 0.7rem; font-family: monospace; padding: 2px 8px; border-radius: 10px; font-weight: bold; }
+  .label-a { background: rgba(123,97,255,0.2); color: #a78bfa; border: 1px solid rgba(123,97,255,0.4); }
+  .label-b { background: rgba(16,185,129,0.2); color: #10B981; border: 1px solid rgba(16,185,129,0.4); }
+  .label-c { background: rgba(201,168,76,0.2); color: #C9A84C; border: 1px solid rgba(201,168,76,0.4); }
+  .rec { background: rgba(16,185,129,0.1); color: #10B981; border: 1px solid rgba(16,185,129,0.3); font-size: 0.68rem; padding: 2px 8px; border-radius: 10px; margin-left: auto; }
+  .approach-header h3 { margin: 0; font-size: 1rem; color: #e0e0ff; }
+  .approach-body { padding: 1rem 1.25rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+  .approach-desc { grid-column: span 2; }
+  .approach-desc p { margin: 0 0 0.5rem; font-size: 0.85rem; color: #aaa; line-height: 1.5; }
+  .approach-visual { display: flex; align-items: center; justify-content: center; }
+  .pros-cons { margin-top: 0.5rem; display: flex; gap: 1rem; }
+  .pros, .cons { flex: 1; }
+  .pros h4, .cons h4 { margin: 0 0 0.3rem; font-size: 0.72rem; font-family: monospace; }
+  .pros h4 { color: #10B981; }
+  .cons h4 { color: #EF4444; }
+  .pros ul, .cons ul { margin: 0; padding-left: 1rem; }
+  .pros li, .cons li { font-size: 0.78rem; color: #888; line-height: 1.6; }
+  .diagram { font-size: 0.65rem; font-family: monospace; color: #666; line-height: 1.8; text-align: center; }
+  .diagram .layer { padding: 3px 10px; border-radius: 4px; margin: 2px 0; display: block; }
+  .l-html { background: rgba(34,211,238,0.1); color: #22D3EE; border: 1px solid rgba(34,211,238,0.2); }
+  .l-3d { background: rgba(123,97,255,0.15); color: #a78bfa; border: 1px solid rgba(123,97,255,0.3); }
+  .l-sep { color: #555; }
+  .l-scroll { background: rgba(201,168,76,0.1); color: #C9A84C; border: 1px solid rgba(201,168,76,0.2); }
+</style>
+
+<h2>How should we architect the 3D site?</h2>
+<p class="subtitle">Three valid approaches — each trades immersion against maintainability.</p>
+
+<div class="approaches">
+
+  <div class="approach" data-choice="hybrid" onclick="toggleSelect(this)">
+    <div class="approach-header">
+      <span class="approach-label label-b">OPTION B</span>
+      <h3>Hybrid — Fixed Canvas + Overlay HTML</h3>
+      <span class="rec">✓ Recommended</span>
+    </div>
+    <div class="approach-body">
+      <div class="approach-desc">
+        <p>A fullscreen R3F canvas is pinned as a fixed background layer. Standard React DOM sections scroll over it. A single GSAP ScrollTrigger timeline reads scroll position and drives camera movement + particle state in the 3D world. HTML sections fade in/out as the camera moves to new "scenes".</p>
+        <div class="pros-cons">
+          <div class="pros">
+            <h4>✓ PROS</h4>
+            <ul>
+              <li>Accessible HTML text for SEO/screen readers</li>
+              <li>Easy to style 2D sections independently</li>
+              <li>Standard DOM layout — no 3D positioning headaches</li>
+              <li>Industry standard (most top-tier 3D sites use this)</li>
+              <li>Degrades gracefully if WebGL fails</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h4>✗ CONS</h4>
+            <ul>
+              <li>Z-index layer management needed</li>
+              <li>Less "total immersion" than pure canvas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="approach-visual">
+        <div class="diagram">
+          <span class="layer l-html">HTML sections (scroll)</span>
+          <span class="layer l-sep">z-index layering ↓</span>
+          <span class="layer l-3d">R3F Canvas (fixed bg)</span>
+          <span class="layer l-sep">↕ synced via</span>
+          <span class="layer l-scroll">GSAP ScrollTrigger</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="approach" data-choice="pure-canvas" onclick="toggleSelect(this)">
+    <div class="approach-header">
+      <span class="approach-label label-a">OPTION A</span>
+      <h3>Pure R3F Canvas — Page IS the 3D World</h3>
+    </div>
+    <div class="approach-body">
+      <div class="approach-desc">
+        <p>The entire page is one Three.js canvas. HTML content is rendered inside the 3D scene using drei's <code>&lt;Html&gt;</code> component. All 6 scenes are "rooms" in 3D space. Camera flies between them. Most cinematic possible experience.</p>
+        <div class="pros-cons">
+          <div class="pros">
+            <h4>✓ PROS</h4>
+            <ul>
+              <li>Maximum cinematic immersion</li>
+              <li>True 3D depth — text exists in 3D space</li>
+              <li>Unified render loop — no sync complexity</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h4>✗ CONS</h4>
+            <ul>
+              <li>Heavy mobile GPU load (1000 nodes risk)</li>
+              <li>SEO / accessibility significantly harder</li>
+              <li>Three.js Html component has layout quirks</li>
+              <li>Harder to iterate and debug</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="approach-visual">
+        <div class="diagram">
+          <span class="layer l-3d">R3F Canvas (full viewport)</span>
+          <span class="layer l-sep">↓ inside the canvas</span>
+          <span class="layer l-html">&lt;Html&gt; text overlays</span>
+          <span class="layer l-sep">+ 3D geometry</span>
+          <span class="layer l-scroll">+ camera path</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="approach" data-choice="embedded" onclick="toggleSelect(this)">
+    <div class="approach-header">
+      <span class="approach-label label-c">OPTION C</span>
+      <h3>Per-Section Embedded 3D Windows</h3>
+    </div>
+    <div class="approach-body">
+      <div class="approach-desc">
+        <p>Standard scrollable HTML page. Each section has its own isolated <code>&lt;Canvas&gt;</code> component as a visual element. No camera path — each 3D piece stands alone. Simplest to build and extend.</p>
+        <div class="pros-cons">
+          <div class="pros">
+            <h4>✓ PROS</h4>
+            <ul>
+              <li>Simplest architecture — easiest to extend</li>
+              <li>Each 3D piece is independent + testable</li>
+              <li>Best mobile performance</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h4>✗ CONS</h4>
+            <ul>
+              <li>Not cinematic — feels like "cards with decoration"</li>
+              <li>No immersive scroll journey</li>
+              <li>Multiple canvases = more GPU overhead than 1</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="approach-visual">
+        <div class="diagram">
+          <span class="layer l-html">HTML section 1</span>
+          <span class="layer l-3d">Canvas A (hero)</span>
+          <span class="layer l-html">HTML section 2</span>
+          <span class="layer l-3d">Canvas B (features)</span>
+          <span class="layer l-html">HTML section 3...</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<p style="margin-top: 1.5rem; color: #666; font-size: 0.85rem;">💡 Option B is what <a href="#" style="color:#7B61FF">Lusion.co</a>, Bruno Simon's portfolio, and most top 3D studios use in production. It's the right call for a demo that needs to run on any device.</p>
