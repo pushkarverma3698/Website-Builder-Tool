@@ -1,45 +1,137 @@
-# Cinematic Landing Page Builder
+# Cinematic Website Builder
 
-A world-class, high-fidelity landing page builder designed for creating "1:1 Pixel Perfect" digital experiences. This tool focuses on cinematic quality, intentional animations, and premium design aesthetics, moving away from generic AI patterns.
-
-## Features
-
-- **Cinematic Aesthetic Presets**: Choose from curated design systems including "Organic Tech", "Midnight Luxe", "Brutalist Signal", and more.
-- **GSAP-Powered Animations**: Every interaction is weighted and professional, utilizing GSAP for smooth, high-performance transitions.
-- **Premium Design System**: Includes global noise overlays, magnetic micro-interactions, and responsive "Floating Island" navigation.
-- **Interactive Artifacts**: Features functional micro-UIs like "Diagnostic Shufflers" and "Telemetry Typewriters" instead of static cards.
-
-## Aesthetic Presets
-
-The tool includes several curated aesthetic presets, each with its own design system, typography, and color palette:
-
-- **Preset A — "Organic Tech" (Clinical Boutique)**: A bridge between biological research and luxury editorial.
-- **Preset B — "Midnight Luxe" (Dark Editorial)**: High-end watchmaker's atelier aesthetic with deep blacks and gold accents.
-- **Preset C — "Brutalist Signal" (Raw Precision)**: Industrial, concrete-inspired design with high information density.
-- **Preset D — "Vapor Clinic" (Neon Biotech)**: Neon-infused laboratory style with deep voids and plasma glows.
-- **Preset E — "Antigravity Lift" (Space-Tech Minimalist)**: Expansive, cinematic space journey theme with minimalist clean interfaces.
-
-## How to Use
-
-To build a cinematic landing page:
-
-1. **Initialize**: Load the `GEMINI.md` script into your agentic workflow.
-2. **Configuration**: Respond to the 6 core setup questions:
-    - **Execution Mode**: Choose between normal execution or providing a reference URL for content analysis.
-    - **Brand Identity**: Define your brand name and one-line purpose.
-    - **Aesthetic Direction**: Select one of the presets above.
-    - **Value Propositions**: Provide 3 key features that will become interactive artifacts.
-    - **Primary CTA**: Define the main action visitors should take.
-    - **Special Requests**: Add any custom on-demand requirements.
-3. **Generation**: The tool automatically maps the preset tokens, generates cinematic copy, and scaffolds the full React project.
-
-## Tech Stack
-
-- **React 19**
-- **Tailwind CSS v3.4+**
-- **GSAP 3** (with ScrollTrigger)
-- **Lucide React**
+> An AI-powered toolkit for building production-ready, cinematic, and immersive websites. Works with Claude Code, Gemini, and any large-context AI.
 
 ---
 
-*This project is part of my professional portfolio, showcasing high-end frontend engineering and creative technology.*
+## What This Is
+
+A collection of battle-tested AI prompts and design systems that turn any AI coding assistant into a world-class frontend engineer. Tell it your brand — it builds a cinematic, pixel-perfect site.
+
+**Includes:**
+- **5 Cinematic Presets** — Organic Tech, Midnight Luxe, Brutalist Signal, Vapor Clinic, Antigravity Lift
+- **3D Immersive Mode** — React Three Fiber + GSAP scroll-driven 3D experiences
+- **Product Development Prompts** — PRD → UX → MVP → Test pipeline
+- **3D Resource Library** — Curated assets, libraries, and tools for 3D web
+
+---
+
+## Quick Start
+
+### For Claude Code
+
+1. Clone this repo into your project directory
+2. Load `CLAUDE.md` into your session
+3. Ask Claude: **"Build me a landing page"**
+4. Answer 6 questions → get a production-ready cinematic site
+
+### For Gemini / Other AI
+
+1. Load `.tool/GEMINI.md` into your session
+2. Same flow — ask "Build me a landing page"
+
+### For 3D Websites
+
+1. Load `prompts/3d-immersive/3d-website-builder.md`
+2. Use the **Master Prompt** section
+3. Answer 4 questions → get a full Three.js / React Three Fiber immersive experience
+
+---
+
+## Repository Structure
+
+```
+website-builder-tool/
+├── CLAUDE.md                          # Claude Code builder script
+├── .tool/
+│   └── GEMINI.md                      # Gemini builder script
+├── prompts/
+│   ├── 3d-immersive/
+│   │   └── 3d-website-builder.md      # 3D website prompts (R3F + GSAP)
+│   ├── product-development/           # PRD → MVP workflow prompts
+│   │   ├── Guided-PRD-Creation.md
+│   │   ├── Guided-UX-User-Flow.md
+│   │   ├── Guided-MVP-Concept.md
+│   │   ├── Guided-MVP.md
+│   │   ├── Guided-Test-Plan.md
+│   │   └── v0-design-prompt.md
+│   └── landing-pages/                 # (community contributions welcome)
+└── resources/
+    └── 3d-resources.md                # Curated 3D web resources
+```
+
+---
+
+## Aesthetic Presets
+
+| Preset | Identity | Colors |
+|--------|----------|--------|
+| A — Organic Tech | Clinical Boutique | Moss + Clay + Cream |
+| B — Midnight Luxe | Dark Editorial | Obsidian + Champagne + Ivory |
+| C — Brutalist Signal | Raw Precision | Paper + Signal Red + Black |
+| D — Vapor Clinic | Neon Biotech | Deep Void + Plasma Purple |
+| E — Antigravity Lift | Space-Tech Minimalist | Black + Off-White + Aurora |
+| F — 3D Immersive | WebGL Canvas | Custom per brand |
+
+---
+
+## 3D Mode
+
+The `prompts/3d-immersive/` directory contains a complete system for building immersive 3D websites:
+
+- **Full Landing Page** — Complete 6-scene 3D scroll journey
+- **Hero Section Only** — Drop-in 3D hero upgrade for existing sites
+- **Product Demo Component** — 3D SaaS product visualization
+- **Performance Checklist** — Ship 60fps 3D without breaking mobile
+
+**Stack:** React Three Fiber + @react-three/drei + GSAP + Lenis + Three.js
+
+See [prompts/3d-immersive/3d-website-builder.md](prompts/3d-immersive/3d-website-builder.md)
+
+---
+
+## Product Development Pipeline
+
+Use the `prompts/product-development/` templates to go from idea to shipped product:
+
+1. **PRD** — Define what you're building and why
+2. **UX Flow** — Map the user journey
+3. **MVP Concept** — Scope ruthlessly
+4. **MVP Plan** — Build spec with tasks
+5. **Test Plan** — QA strategy
+6. **v0 Design** — Generate visual prompt for v0.dev
+
+Source: [TechNomadCode/AI-Product-Development-Toolkit](https://github.com/TechNomadCode/AI-Product-Development-Toolkit)
+
+---
+
+## Technical Stack (Cinematic Presets A–E)
+
+- React 19 + Vite
+- Tailwind CSS v3.4.17
+- GSAP 3 + ScrollTrigger
+- Lucide React (icons)
+- Google Fonts (preset-specific)
+
+---
+
+## Contributing
+
+Contributions welcome:
+- New aesthetic presets (add to `CLAUDE.md` and `.tool/GEMINI.md`)
+- 3D scene templates (add to `prompts/3d-immersive/`)
+- Industry-specific landing page prompts (add to `prompts/landing-pages/`)
+
+---
+
+## Credits
+
+- Cinematic Builder design system — [@pushkarverma3698](https://github.com/pushkarverma3698)
+- Product Development Prompts — [TechNomadCode/AI-Product-Development-Toolkit](https://github.com/TechNomadCode/AI-Product-Development-Toolkit)
+- 3D Resources — [devanshutak25/3d-resources](https://github.com/devanshutak25/3d-resources)
+
+---
+
+## License
+
+MIT — use freely, credit appreciated.
