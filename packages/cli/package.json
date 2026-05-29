@@ -1,0 +1,33 @@
+{
+  "name": "cinematic-web",
+  "version": "0.1.0",
+  "description": "Scaffold cinematic landing pages from 6 premium design presets — CLI",
+  "type": "module",
+  "bin": {
+    "cinematic-web": "./dist/cli.js"
+  },
+  "main": "./dist/cli.js",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@cinematic/core": "workspace:*",
+    "@clack/prompts": "^0.7.0",
+    "commander": "^12.1.0",
+    "fs-extra": "^11.2.0",
+    "picocolors": "^1.0.1"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^20.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": ["cli", "landing-page", "cinematic", "react", "vite", "gsap"],
+  "license": "MIT"
+}

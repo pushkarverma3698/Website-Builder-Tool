@@ -20,6 +20,11 @@ export function tokenReplace(content: string, data: Record<string, unknown>): st
 }
 
 function resolvePath(obj: Record<string, unknown>, path: string): unknown {
+  // Try the flat dotted key first (e.g. { 'palette.primary': '#2E4036' })
+  if (Object.prototype.hasOwnProperty.call(obj, path)) {
+    return obj[path]
+  }
+  // Fall back to nested traversal (e.g. { palette: { primary: '#2E4036' } })
   const parts = path.split('.')
   let current: unknown = obj
   for (const part of parts) {

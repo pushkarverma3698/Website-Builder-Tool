@@ -2,9 +2,9 @@ import { readFileSync, readdirSync, existsSync } from 'node:fs'
 import { join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-// Resolve the monorepo root relative to this package.
-// packages/core/src/presets.ts → ../../.. → repo root
-const REPO_ROOT = resolve(fileURLToPath(import.meta.url), '..', '..', '..', '..', '..')
+// Resolve the monorepo root from the bundled dist file.
+// packages/core/dist/index.js → 4 levels up → repo root
+const REPO_ROOT = resolve(fileURLToPath(import.meta.url), '..', '..', '..', '..')
 
 /**
  * A fully parsed preset.json — design tokens for one aesthetic direction.
