@@ -1,40 +1,88 @@
-# Cinematic Website Builder
+# cinematic-web
 
-> An AI-powered toolkit for building production-ready, cinematic, and immersive websites. Works with Claude Code, Gemini, and any large-context AI.
+> The cinematic shadcn/ui — premium design systems as code, 6 presets, 3D mode, think-to-build pipeline.
 
----
-
-## What This Is
-
-A collection of battle-tested AI prompts and design systems that turn any AI coding assistant into a world-class frontend engineer. Tell it your brand — it builds a cinematic, pixel-perfect site.
-
-**Includes:**
-- **5 Cinematic Presets** — Organic Tech, Midnight Luxe, Brutalist Signal, Vapor Clinic, Antigravity Lift
-- **3D Immersive Mode** — React Three Fiber + GSAP scroll-driven 3D experiences
-- **Product Development Prompts** — PRD → UX → MVP → Test pipeline
-- **3D Resource Library** — Curated assets, libraries, and tools for 3D web
+[![CI](https://github.com/pushkarverma3698/website-builder-tool/actions/workflows/ci.yml/badge.svg)](https://github.com/pushkarverma3698/website-builder-tool/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/cinematic-web)](https://www.npmjs.com/package/cinematic-web)
 
 ---
 
-## Quick Start
+## What It Is
 
-### For Claude Code
+`cinematic-web` scaffolds production-ready React landing pages with a cinematic design soul — no generic AI output, no locked-in platforms, no watermarks. Fully exported code you own.
 
-1. Clone this repo into your project directory
-2. Load `CLAUDE.md` into your session
-3. Ask Claude: **"Build me a landing page"**
-4. Answer 6 questions → get a production-ready cinematic site
+**Two ways to use it:**
 
-### For Gemini / Other AI
+| Mode | How | Best for |
+|------|-----|---------|
+| **CLI** | `npx cinematic-web create` | Developers who want a working Vite project in seconds |
+| **Prompt mode** | Load `CLAUDE.md` into Claude Code | AI-native workflows, custom modifications on the fly |
 
-1. Load `.tool/GEMINI.md` into your session
-2. Same flow — ask "Build me a landing page"
+---
 
-### For 3D Websites
+## Quick Start — CLI
 
-1. Load `prompts/3d-immersive/3d-website-builder.md`
-2. Use the **Master Prompt** section
-3. Answer 4 questions → get a full Three.js / React Three Fiber immersive experience
+```bash
+npx cinematic-web create my-site
+```
+
+Answer 6 questions (brand, preset, value props, CTA) → get a Vite + React + GSAP project.
+
+```bash
+cd my-site
+npm install
+npm run dev
+```
+
+### All Commands
+
+```bash
+cinematic-web create [name]   # Scaffold a new landing page
+cinematic-web think           # Walk through PRD → UX → MVP pipeline
+cinematic-web init            # Add CLAUDE.md to an existing project
+```
+
+---
+
+## Quick Start — Prompt Mode (Claude Code)
+
+1. Clone this repo
+2. Load `CLAUDE.md` into your Claude Code session  
+3. Say: **"Build me a landing page"**
+4. Answer the 6 questions → production-ready site
+
+---
+
+## Aesthetic Presets
+
+| # | Preset | Feel | Primary Stack |
+|---|--------|------|---------------|
+| A | Organic Tech | Clinical Boutique | Moss + Clay + Cream |
+| B | Midnight Luxe | Dark Editorial | Obsidian + Champagne |
+| C | Brutalist Signal | Raw Precision | Paper + Signal Red |
+| D | Vapor Clinic | Neon Biotech | Deep Void + Plasma |
+| E | Antigravity Lift | Space-Tech Minimalist | Black + Aurora Glow |
+| F | 3D Immersive | WebGL Canvas | React Three Fiber + GSAP |
+
+All presets produce: React 19 + Vite + Tailwind CSS + GSAP ScrollTrigger + Google Fonts. Preset F adds React Three Fiber + Drei + Lenis smooth scroll.
+
+---
+
+## Think Pipeline (PRD → MVP)
+
+```bash
+cinematic-web think
+```
+
+Walks you through 5 sequential prompts from `prompts/product-development/`:
+
+1. Guided PRD Creation
+2. Guided UX & User Flow
+3. Guided MVP Concept
+4. Guided MVP Plan
+5. Guided Test Plan
+
+Outputs `docs/PRD.md`, `docs/UX.md`, `docs/MVP.md`. Then `cinematic-web create` pre-fills brand/purpose from the PRD.
 
 ---
 
@@ -42,91 +90,71 @@ A collection of battle-tested AI prompts and design systems that turn any AI cod
 
 ```
 website-builder-tool/
-├── CLAUDE.md                          # Claude Code builder script
-├── .tool/
-│   └── GEMINI.md                      # Gemini builder script
+├── CLAUDE.md                          # Prompt-mode builder (Claude Code)
+├── packages/
+│   ├── cli/                           # cinematic-web CLI (npm package)
+│   └── core/                          # @cinematic/core — shared types + tokens
+├── presets/                           # 6 preset definitions (palette, fonts, identity)
+│   ├── organic-tech/preset.json
+│   ├── midnight-luxe/preset.json
+│   ├── brutalist-signal/preset.json
+│   ├── vapor-clinic/preset.json
+│   ├── antigravity-lift/preset.json
+│   └── 3d-immersive/preset.json
+├── templates/
+│   ├── base-react/                    # Presets A–E (Vite + React + Tailwind + GSAP)
+│   └── three-fiber/                   # Preset F (+ React Three Fiber + Drei + Lenis)
 ├── prompts/
-│   ├── 3d-immersive/
-│   │   └── 3d-website-builder.md      # 3D website prompts (R3F + GSAP)
-│   ├── product-development/           # PRD → MVP workflow prompts
-│   │   ├── Guided-PRD-Creation.md
-│   │   ├── Guided-UX-User-Flow.md
-│   │   ├── Guided-MVP-Concept.md
-│   │   ├── Guided-MVP.md
-│   │   ├── Guided-Test-Plan.md
-│   │   └── v0-design-prompt.md
-│   └── landing-pages/                 # (community contributions welcome)
-└── resources/
-    └── 3d-resources.md                # Curated 3D web resources
+│   ├── 3d-immersive/                  # 3D build prompts
+│   └── product-development/           # PRD → MVP workflow templates
+├── examples/
+│   └── turicks-3d/                    # Reference 3D implementation (frozen)
+└── scripts/
+    ├── verify-scaffold.mjs            # CI scaffold verification
+    └── sync-claude.ts                 # Regenerates CLAUDE.md preset section from JSON
 ```
 
 ---
 
-## Aesthetic Presets
+## Development
 
-| Preset | Identity | Colors |
-|--------|----------|--------|
-| A — Organic Tech | Clinical Boutique | Moss + Clay + Cream |
-| B — Midnight Luxe | Dark Editorial | Obsidian + Champagne + Ivory |
-| C — Brutalist Signal | Raw Precision | Paper + Signal Red + Black |
-| D — Vapor Clinic | Neon Biotech | Deep Void + Plasma Purple |
-| E — Antigravity Lift | Space-Tech Minimalist | Black + Off-White + Aurora |
-| F — 3D Immersive | WebGL Canvas | Custom per brand |
+```bash
+pnpm install
+pnpm build                          # Build all packages
+node scripts/verify-scaffold.mjs    # Verify all 6 presets scaffold + no token leaks
+```
 
----
+### Verify a specific preset
 
-## 3D Mode
+```bash
+node scripts/verify-scaffold.mjs midnight-luxe
+```
 
-The `prompts/3d-immersive/` directory contains a complete system for building immersive 3D websites:
+### Keep CLAUDE.md in sync
 
-- **Full Landing Page** — Complete 6-scene 3D scroll journey
-- **Hero Section Only** — Drop-in 3D hero upgrade for existing sites
-- **Product Demo Component** — 3D SaaS product visualization
-- **Performance Checklist** — Ship 60fps 3D without breaking mobile
+After editing a `preset.json`, regenerate the preset section in `CLAUDE.md`:
 
-**Stack:** React Three Fiber + @react-three/drei + GSAP + Lenis + Three.js
-
-See [prompts/3d-immersive/3d-website-builder.md](prompts/3d-immersive/3d-website-builder.md)
-
----
-
-## Product Development Pipeline
-
-Use the `prompts/product-development/` templates to go from idea to shipped product:
-
-1. **PRD** — Define what you're building and why
-2. **UX Flow** — Map the user journey
-3. **MVP Concept** — Scope ruthlessly
-4. **MVP Plan** — Build spec with tasks
-5. **Test Plan** — QA strategy
-6. **v0 Design** — Generate visual prompt for v0.dev
-
-Source: [TechNomadCode/AI-Product-Development-Toolkit](https://github.com/TechNomadCode/AI-Product-Development-Toolkit)
-
----
-
-## Technical Stack (Cinematic Presets A–E)
-
-- React 19 + Vite
-- Tailwind CSS v3.4.17
-- GSAP 3 + ScrollTrigger
-- Lucide React (icons)
-- Google Fonts (preset-specific)
+```bash
+pnpm sync:claude
+```
 
 ---
 
 ## Contributing
 
 Contributions welcome:
-- New aesthetic presets (add to `CLAUDE.md` and `.tool/GEMINI.md`)
-- 3D scene templates (add to `prompts/3d-immersive/`)
-- Industry-specific landing page prompts (add to `prompts/landing-pages/`)
+
+- **New preset** — add `presets/<name>/preset.json` + `presets/<name>/README.md`, run `pnpm sync:claude`
+- **Template improvements** — edit `templates/base-react/` or `templates/three-fiber/`; run verify script
+- **Product prompts** — add to `prompts/landing-pages/`
+
+See `CONTRIBUTING.md` (coming in Phase 2).
 
 ---
 
 ## Credits
 
-- Cinematic Builder design system — [@pushkarverma3698](https://github.com/pushkarverma3698)
+- Design system & CLI — [@pushkarverma3698](https://github.com/pushkarverma3698)
 - Product Development Prompts — [TechNomadCode/AI-Product-Development-Toolkit](https://github.com/TechNomadCode/AI-Product-Development-Toolkit)
 - 3D Resources — [devanshutak25/3d-resources](https://github.com/devanshutak25/3d-resources)
 
@@ -134,4 +162,4 @@ Contributions welcome:
 
 ## License
 
-MIT — use freely, credit appreciated.
+MIT
