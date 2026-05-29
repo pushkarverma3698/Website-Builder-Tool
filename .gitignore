@@ -2,3 +2,21 @@
 node_modules/
 dist/
 .env
+.env.*
+*.local
+
+# pnpm
+.pnpm-store/
+
+# Build outputs
+packages/*/dist/
+apps/*/dist/
+apps/*/.next/
+templates/*/node_modules/
+
+# worktrees
+.worktrees/
+.claude/worktrees/
+
+# Generated
+.superpowers/
