@@ -12,7 +12,7 @@
  * // → 'Color: #2E4036'
  */
 export function tokenReplace(content: string, data: Record<string, unknown>): string {
-  return content.replace(/\{\{([\w.]+)\}\}/g, (match, path: string) => {
+  return content.replace(/\{\{([\w.\-]+)\}\}/g, (match, path: string) => {
     const value = resolvePath(data, path)
     if (value === undefined || value === null) return match
     return String(value)

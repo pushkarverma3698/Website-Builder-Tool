@@ -5,12 +5,12 @@
   "template": "three-fiber",
   "identity": "Full 3D canvas environment. The page IS a 3D world — scroll drives the camera.",
   "palette": {
-    "primary": "#000000",
-    "accent": "#FFFFFF",
-    "background": "#000000",
-    "dark": "#000000",
-    "primaryLabel": "Void",
-    "accentLabel": "Pure",
+    "primary": "#0A0A14",
+    "accent": "#7B61FF",
+    "background": "#0A0A14",
+    "dark": "#0A0A14",
+    "primaryLabel": "Deep Void",
+    "accentLabel": "Plasma",
     "backgroundLabel": "Infinite",
     "darkLabel": "Abyss"
   },
