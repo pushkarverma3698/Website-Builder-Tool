@@ -1,0 +1,42 @@
+{
+  "id": "3d-immersive",
+  "name": "3D Immersive",
+  "label": "WebGL / Three.js",
+  "template": "three-fiber",
+  "identity": "Full 3D canvas environment. The page IS a 3D world — scroll drives the camera.",
+  "palette": {
+    "primary": "#000000",
+    "accent": "#FFFFFF",
+    "background": "#000000",
+    "dark": "#000000",
+    "primaryLabel": "Void",
+    "accentLabel": "Pure",
+    "backgroundLabel": "Infinite",
+    "darkLabel": "Abyss"
+  },
+  "typography": {
+    "heading": ["Inter"],
+    "drama": "Playfair Display",
+    "data": "JetBrains Mono",
+    "headingTracking": "tight",
+    "dramaStyle": "italic"
+  },
+  "googleFonts": "https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:ital,wght@1,400;1,700&family=JetBrains+Mono:wght@400;500&display=swap",
+  "imageMood": "3d abstract geometric space void",
+  "unsplashQuery": "abstract+3d+space+geometric",
+  "promptFile": "../../prompts/3d-immersive/3d-website-builder.md",
+  "dependencies": {
+    "@react-three/fiber": "^8.0.0",
+    "@react-three/drei": "^9.0.0",
+    "three": "^0.163.0",
+    "gsap": "^3.12.0",
+    "@studio-freight/lenis": "^1.0.0"
+  },
+  "heroLinePattern": {
+    "part1": "[Vision noun] in",
+    "part1Style": "bold sans",
+    "part2": "[Dimension word].",
+    "part2Style": "massive serif italic"
+  },
+  "notes": "Full build instructions in prompts/3d-immersive/3d-website-builder.md. See examples/turicks-3d/ for a working reference build."
+}

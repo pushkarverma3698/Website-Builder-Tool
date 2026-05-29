@@ -1,0 +1,33 @@
+{
+  "id": "organic-tech",
+  "name": "Organic Tech",
+  "label": "Clinical Boutique",
+  "template": "base-react",
+  "identity": "A bridge between a biological research lab and an avant-garde luxury magazine.",
+  "palette": {
+    "primary": "#2E4036",
+    "accent": "#CC5833",
+    "background": "#F2F0E9",
+    "dark": "#1A1A1A",
+    "primaryLabel": "Moss",
+    "accentLabel": "Clay",
+    "backgroundLabel": "Cream",
+    "darkLabel": "Charcoal"
+  },
+  "typography": {
+    "heading": ["Plus Jakarta Sans", "Outfit"],
+    "drama": "Cormorant Garamond",
+    "data": "IBM Plex Mono",
+    "headingTracking": "tight",
+    "dramaStyle": "italic"
+  },
+  "googleFonts": "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Outfit:wght@300;400;600&family=Cormorant+Garamond:ital,wght@1,300;1,400;1,600&family=IBM+Plex+Mono:wght@400;500&display=swap",
+  "imageMood": "dark forest organic textures moss ferns laboratory glassware",
+  "unsplashQuery": "dark+forest+moss+laboratory",
+  "heroLinePattern": {
+    "part1": "[Concept noun] is the",
+    "part1Style": "bold sans",
+    "part2": "[Power word].",
+    "part2Style": "massive serif italic"
+  }
+}

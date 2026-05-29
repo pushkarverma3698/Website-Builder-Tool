@@ -1,0 +1,33 @@
+{
+  "id": "vapor-clinic",
+  "name": "Vapor Clinic",
+  "label": "Neon Biotech",
+  "template": "base-react",
+  "identity": "A genome sequencing lab inside a Tokyo nightclub.",
+  "palette": {
+    "primary": "#0A0A14",
+    "accent": "#7B61FF",
+    "background": "#F0EFF4",
+    "dark": "#18181B",
+    "primaryLabel": "Deep Void",
+    "accentLabel": "Plasma",
+    "backgroundLabel": "Ghost",
+    "darkLabel": "Graphite"
+  },
+  "typography": {
+    "heading": ["Sora"],
+    "drama": "Instrument Serif",
+    "data": "Fira Code",
+    "headingTracking": "tight",
+    "dramaStyle": "italic"
+  },
+  "googleFonts": "https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Instrument+Serif:ital@1&family=Fira+Code:wght@400;500&display=swap",
+  "imageMood": "bioluminescence dark water neon reflections microscopy",
+  "unsplashQuery": "bioluminescence+neon+dark+water",
+  "heroLinePattern": {
+    "part1": "[Tech noun] beyond",
+    "part1Style": "bold sans",
+    "part2": "[Boundary word].",
+    "part2Style": "massive serif italic"
+  }
+}

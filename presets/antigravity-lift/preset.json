@@ -1,0 +1,34 @@
+{
+  "id": "antigravity-lift",
+  "name": "Antigravity Lift",
+  "label": "Space-Tech Minimalist",
+  "template": "base-react",
+  "identity": "A cinematic, deep-space journey representing an intelligent, agentic system. Minimalist and expansive.",
+  "palette": {
+    "primary": "#000000",
+    "accent": "linear-gradient(135deg, #4FC3F7 0%, #7C4DFF 33%, #E91E63 66%, #FF6D00 100%)",
+    "background": "#F8F9FA",
+    "dark": "#202124",
+    "primaryLabel": "Deep Space",
+    "accentLabel": "Aurora Glow",
+    "backgroundLabel": "Off-White",
+    "darkLabel": "Near Black"
+  },
+  "typography": {
+    "heading": ["Google Sans Flex", "Google Sans"],
+    "body": "Google Sans Text",
+    "data": "Google Sans Text",
+    "headingTracking": "tight",
+    "dramaStyle": "normal",
+    "microCopy": "small-caps wide-tracking"
+  },
+  "googleFonts": "https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Google+Sans+Text:wght@400;500&display=swap",
+  "imageMood": "floating elements particle fields soft blurred auroras deep space minimalist clean windows",
+  "unsplashQuery": "aurora+space+minimalist+particles",
+  "heroLinePattern": {
+    "part1": "[Agentic verb] the",
+    "part1Style": "bold sans",
+    "part2": "[Scale noun].",
+    "part2Style": "variable sans"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "brutalist-signal",
+  "name": "Brutalist Signal",
+  "label": "Raw Precision",
+  "template": "base-react",
+  "identity": "A control room for the future — no decoration, pure information density.",
+  "palette": {
+    "primary": "#E8E4DD",
+    "accent": "#E63B2E",
+    "background": "#F5F3EE",
+    "dark": "#111111",
+    "primaryLabel": "Paper",
+    "accentLabel": "Signal Red",
+    "backgroundLabel": "Off-white",
+    "darkLabel": "Black"
+  },
+  "typography": {
+    "heading": ["Space Grotesk"],
+    "drama": "DM Serif Display",
+    "data": "Space Mono",
+    "headingTracking": "tight",
+    "dramaStyle": "italic"
+  },
+  "googleFonts": "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=DM+Serif+Display:ital@1&family=Space+Mono:wght@400;700&display=swap",
+  "imageMood": "concrete brutalist architecture raw materials industrial",
+  "unsplashQuery": "concrete+brutalist+architecture+industrial",
+  "heroLinePattern": {
+    "part1": "[Direct verb] the",
+    "part1Style": "bold sans",
+    "part2": "[System noun].",
+    "part2Style": "massive serif italic"
+  }
+}
