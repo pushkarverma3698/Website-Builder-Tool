@@ -15,7 +15,9 @@
     "darkLabel": "Slate"
   },
   "typography": {
-    "heading": ["Inter"],
+    "heading": [
+      "Inter"
+    ],
     "drama": "Playfair Display",
     "data": "JetBrains Mono",
     "headingTracking": "tight",
@@ -29,5 +31,6 @@
     "part1Style": "bold sans",
     "part2": "[Precision word].",
     "part2Style": "massive serif italic"
-  }
+  },
+  "unsplashPhotoId": "1549989460-c3f0c37b8e73"
 }

@@ -6,8 +6,10 @@ import { fileURLToPath } from 'node:url'
 import { applyTokens } from './tokens.js'
 import type { ProjectSpec, Preset } from '@cinematic/core'
 
-// Repo root: packages/cli/dist/cli.js → 4 levels up → repo root
-const REPO_ROOT = resolve(fileURLToPath(import.meta.url), '..', '..', '..', '..')
+// Assets dir: packages/cli/dist/cli.js → packages/cli/ → assets/
+// Works both in the monorepo (packages/cli/assets/) and as an installed npm package
+// (node_modules/cinematic-web/assets/). Assets are copied at build time by copy-assets.mjs.
+const ASSETS_DIR = resolve(fileURLToPath(import.meta.url), '..', '..', 'assets')
 
 // File extensions that support token replacement
 const TEXT_EXTENSIONS = new Set([
@@ -26,7 +28,7 @@ export async function scaffoldProject(
   preset: Preset
 ): Promise<void> {
   const templateName = preset.template === 'three-fiber' ? 'three-fiber' : 'base-react'
-  const templateDir = join(REPO_ROOT, 'templates', templateName)
+  const templateDir = join(ASSETS_DIR, 'templates', templateName)
 
   // Copy all template files to output
   copySync(templateDir, outputDir, {

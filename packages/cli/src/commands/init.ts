@@ -4,9 +4,9 @@ import { fileURLToPath } from 'node:url'
 import * as p from '@clack/prompts'
 import pc from 'picocolors'
 
-// Repo root: packages/cli/dist/cli.js → 4 levels up → repo root
-const REPO_ROOT = resolve(fileURLToPath(import.meta.url), '..', '..', '..', '..')
-const SOURCE_CLAUDE_MD = join(REPO_ROOT, 'CLAUDE.md')
+// Assets dir: dist/cli.js → packages/cli/ → assets/ (copied at build time by copy-assets.mjs)
+const ASSETS_DIR = resolve(fileURLToPath(import.meta.url), '..', '..', 'assets')
+const SOURCE_CLAUDE_MD = join(ASSETS_DIR, 'CLAUDE.md')
 
 export async function runInit(): Promise<void> {
   p.intro(`${pc.bgCyan(pc.black(' cinematic-web '))} ${pc.dim('init')}`)

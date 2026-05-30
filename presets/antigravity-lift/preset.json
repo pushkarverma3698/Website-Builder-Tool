@@ -15,7 +15,10 @@
     "darkLabel": "Near Black"
   },
   "typography": {
-    "heading": ["Google Sans Flex", "Google Sans"],
+    "heading": [
+      "Google Sans Flex",
+      "Google Sans"
+    ],
     "body": "Google Sans Text",
     "data": "Google Sans Text",
     "headingTracking": "tight",
@@ -30,5 +33,6 @@
     "part1Style": "bold sans",
     "part2": "[Scale noun].",
     "part2Style": "variable sans"
-  }
+  },
+  "unsplashPhotoId": "1446776877081-d282a0f896e2"
 }

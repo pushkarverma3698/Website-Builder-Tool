@@ -15,7 +15,9 @@
     "darkLabel": "Abyss"
   },
   "typography": {
-    "heading": ["Inter"],
+    "heading": [
+      "Inter"
+    ],
     "drama": "Playfair Display",
     "data": "JetBrains Mono",
     "headingTracking": "tight",
@@ -38,5 +40,6 @@
     "part2": "[Dimension word].",
     "part2Style": "massive serif italic"
   },
-  "notes": "Full build instructions in prompts/3d-immersive/3d-website-builder.md. See examples/turicks-3d/ for a working reference build."
+  "notes": "Full build instructions in prompts/3d-immersive/3d-website-builder.md. See examples/turicks-3d/ for a working reference build.",
+  "unsplashPhotoId": "1419242902214-272b3f66ee7a"
 }

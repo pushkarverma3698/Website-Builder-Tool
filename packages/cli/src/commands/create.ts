@@ -1,11 +1,16 @@
 import { existsSync, mkdirSync } from 'node:fs'
-import { resolve } from 'node:path'
+import { resolve, join } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import * as p from '@clack/prompts'
 import pc from 'picocolors'
 import { listPresets, getPreset } from '@cinematic/core'
 import type { ProjectSpec } from '@cinematic/core'
 import { loadSpec, saveSpec } from '../spec.js'
 import { scaffoldProject } from '../scaffold.js'
+
+// Assets dir: dist/cli.js → packages/cli/ → assets/ (copied at build time by copy-assets.mjs)
+const ASSETS_DIR = resolve(fileURLToPath(import.meta.url), '..', '..', 'assets')
+const PRESETS_DIR = join(ASSETS_DIR, 'presets')
 
 export async function runCreate(name?: string): Promise<void> {
   p.intro(`${pc.bgCyan(pc.black(' cinematic-web '))} ${pc.dim('create')}`)
@@ -30,7 +35,7 @@ export async function runCreate(name?: string): Promise<void> {
 
   // --- Check for existing cinematic.json (pre-filled by `think`) ---
   const existingSpec = loadSpec(process.cwd())
-  const presets = listPresets()
+  const presets = listPresets(PRESETS_DIR)
 
   if (presets.length === 0) {
     p.cancel('No presets found. Make sure you\'re running from the cinematic-web repo root or install the package.')
@@ -127,7 +132,7 @@ export async function runCreate(name?: string): Promise<void> {
     notes: ((notes as string) ?? '').trim(),
   }
 
-  const preset = getPreset(spec.presetId)
+  const preset = getPreset(spec.presetId, PRESETS_DIR)
   if (!preset) {
     p.cancel(`Preset "${spec.presetId}" not found.`)
     process.exit(1)

@@ -37,6 +37,7 @@ export interface Preset {
   googleFonts: string
   imageMood: string
   unsplashQuery: string
+  unsplashPhotoId?: string
   heroLinePattern: {
     part1: string
     part1Style: string

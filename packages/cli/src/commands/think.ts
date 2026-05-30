@@ -6,9 +6,9 @@ import pc from 'picocolors'
 import { loadSpec, saveSpec } from '../spec.js'
 import type { ProjectSpec } from '@cinematic/core'
 
-// Repo root: packages/cli/dist/cli.js → 4 levels up → repo root
-const REPO_ROOT = resolve(fileURLToPath(import.meta.url), '..', '..', '..', '..')
-const PROMPTS_DIR = join(REPO_ROOT, 'prompts', 'product-development')
+// Assets dir: dist/cli.js → packages/cli/ → assets/ (copied at build time by copy-assets.mjs)
+const ASSETS_DIR = resolve(fileURLToPath(import.meta.url), '..', '..', 'assets')
+const PROMPTS_DIR = join(ASSETS_DIR, 'prompts', 'product-development')
 
 interface ThinkSession {
   brand: string

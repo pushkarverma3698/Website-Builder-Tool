@@ -15,7 +15,10 @@
     "darkLabel": "Charcoal"
   },
   "typography": {
-    "heading": ["Plus Jakarta Sans", "Outfit"],
+    "heading": [
+      "Plus Jakarta Sans",
+      "Outfit"
+    ],
     "drama": "Cormorant Garamond",
     "data": "IBM Plex Mono",
     "headingTracking": "tight",
@@ -29,5 +32,6 @@
     "part1Style": "bold sans",
     "part2": "[Power word].",
     "part2Style": "massive serif italic"
-  }
+  },
+  "unsplashPhotoId": "1518770660439-4636190af475"
 }

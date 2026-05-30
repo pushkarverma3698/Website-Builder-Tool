@@ -7,8 +7,12 @@
     "cinematic-web": "./dist/cli.js"
   },
   "main": "./dist/cli.js",
+  "files": [
+    "dist",
+    "assets"
+  ],
   "scripts": {
-    "build": "tsup",
+    "build": "node copy-assets.mjs && tsup",
     "dev": "tsup --watch",
     "type-check": "tsc --noEmit"
   },

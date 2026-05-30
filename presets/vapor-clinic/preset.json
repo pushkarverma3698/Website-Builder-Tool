@@ -15,7 +15,9 @@
     "darkLabel": "Graphite"
   },
   "typography": {
-    "heading": ["Sora"],
+    "heading": [
+      "Sora"
+    ],
     "drama": "Instrument Serif",
     "data": "Fira Code",
     "headingTracking": "tight",
@@ -29,5 +31,6 @@
     "part1Style": "bold sans",
     "part2": "[Boundary word].",
     "part2Style": "massive serif italic"
-  }
+  },
+  "unsplashPhotoId": "1535813426-e37038a9af65"
 }

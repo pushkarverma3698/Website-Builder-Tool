@@ -15,7 +15,9 @@
     "darkLabel": "Black"
   },
   "typography": {
-    "heading": ["Space Grotesk"],
+    "heading": [
+      "Space Grotesk"
+    ],
     "drama": "DM Serif Display",
     "data": "Space Mono",
     "headingTracking": "tight",
@@ -29,5 +31,6 @@
     "part1Style": "bold sans",
     "part2": "[System noun].",
     "part2Style": "massive serif italic"
-  }
+  },
+  "unsplashPhotoId": "1553877522-40d43f33d8f0"
 }

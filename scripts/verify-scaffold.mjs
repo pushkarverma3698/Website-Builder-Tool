@@ -80,7 +80,7 @@ async function main() {
     protocolStep1Desc: `Our system processes your inputs and delivers a tailored protocol built specifically for your context and objectives.`,
     protocolStep2Title: `Deliver ${spec.valueProps[2]}`,
     protocolStep2Desc: `Results are delivered in real time with full transparency — measurable, verifiable, and ready to act on.`,
-    unsplashPhotoId: '1518770660439-4636190af475',
+    unsplashPhotoId: preset.unsplashPhotoId ?? '1518770660439-4636190af475',
     'preset.name': preset.name,
     'preset.id': preset.id,
     googleFonts: preset.googleFonts,

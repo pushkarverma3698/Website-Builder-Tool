@@ -36,8 +36,8 @@ export function buildTokenMap(spec: ProjectSpec, preset: Preset): Record<string,
     protocolStep2Title: `Deliver ${spec.valueProps[2]}`,
     protocolStep2Desc: `Results are delivered in real time with full transparency — measurable, verifiable, and ready to act on.`,
 
-    // Unsplash placeholder (CLI will attempt to resolve a real photo ID)
-    unsplashPhotoId: '1518770660439-4636190af475',
+    // Per-preset curated Unsplash photo ID (falls back to organic-tech default)
+    unsplashPhotoId: preset.unsplashPhotoId ?? '1518770660439-4636190af475',
 
     // Preset tokens (flat)
     'preset.name': preset.name,
