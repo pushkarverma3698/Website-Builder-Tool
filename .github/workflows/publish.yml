@@ -38,8 +38,8 @@ jobs:
             node scripts/verify-scaffold.mjs "$preset"
           done
 
-      - name: Publish @cinematic/core
-        run: pnpm publish --filter @cinematic/core --access public --no-git-checks
+      - name: Publish cinematic-core
+        run: pnpm publish --filter cinematic-core --access public --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 

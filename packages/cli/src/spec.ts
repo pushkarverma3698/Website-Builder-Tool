@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync, existsSync } from 'node:fs'
 import { resolve } from 'node:path'
-import { ProjectSpecSchema } from '@cinematic/core'
-import type { ProjectSpec } from '@cinematic/core'
+import { ProjectSpecSchema } from 'cinematic-core'
+import type { ProjectSpec } from 'cinematic-core'
 
 const SPEC_FILENAME = 'cinematic.json'
 

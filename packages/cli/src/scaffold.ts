@@ -4,7 +4,7 @@ import { readFileSync, writeFileSync, readdirSync } from 'node:fs'
 import { join, resolve, relative } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { applyTokens } from './tokens.js'
-import type { ProjectSpec, Preset } from '@cinematic/core'
+import type { ProjectSpec, Preset } from 'cinematic-core'
 
 // Assets dir: packages/cli/dist/cli.js → packages/cli/ → assets/
 // Works both in the monorepo (packages/cli/assets/) and as an installed npm package

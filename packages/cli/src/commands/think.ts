@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url'
 import * as p from '@clack/prompts'
 import pc from 'picocolors'
 import { loadSpec, saveSpec } from '../spec.js'
-import type { ProjectSpec } from '@cinematic/core'
+import type { ProjectSpec } from 'cinematic-core'
 
 // Assets dir: dist/cli.js → packages/cli/ → assets/ (copied at build time by copy-assets.mjs)
 const ASSETS_DIR = resolve(fileURLToPath(import.meta.url), '..', '..', 'assets')

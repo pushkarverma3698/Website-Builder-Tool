@@ -1,5 +1,5 @@
-import { tokenReplace } from '@cinematic/core'
-import type { ProjectSpec, Preset } from '@cinematic/core'
+import { tokenReplace } from 'cinematic-core'
+import type { ProjectSpec, Preset } from 'cinematic-core'
 
 /**
  * Build the full token map by merging spec + preset tokens.

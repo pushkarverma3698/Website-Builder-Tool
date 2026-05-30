@@ -1,5 +1,5 @@
 {
-  "name": "@cinematic/core",
+  "name": "cinematic-core",
   "version": "0.1.0",
   "description": "Shared core for cinematic-web: preset registry, project spec schema, token replacement",
   "type": "module",
